@@ -47,7 +47,14 @@ products.forEach(element => {
     compra.appendChild(valorProduto);
 });
 
-let valorTotal = document.createElement('li')
+/*let valorTotal = document.createElement('li')
 list.appendChild(valorTotal)
-valorTotal.innerText = `Total     ${soma}`
-
+valorTotal.innerText = `Total     ${soma}`*/
+let valorSoma = document.createElement('li')
+list.appendChild(valorSoma);
+let nomeValorTotal = document.createElement('p')
+let valorTotal = document.createElement('p')
+valorSoma.appendChild(nomeValorTotal);
+valorSoma.appendChild(valorTotal);
+nomeValorTotal.innerText = 'Valor'
+valorTotal.innerText = soma;
