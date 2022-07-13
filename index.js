@@ -28,19 +28,26 @@ let soma = 0;
 const button = document.createElement('button')
 const section = document.createElement('section');
 main.appendChild(section);
-button.innerText = 'Finalizar';
+button.innerText = 'Finalizar compra';
 button.type = 'submit';
 section.appendChild(button);
-
-
-for (let i = 0; i < products.length; i++){
-    soma += products[i].valor
+const array1 = [];
+products.forEach(element => {
+    soma += element.valor
+    array1.push(soma)
     let compra = document.createElement('li');
-    let meuProduto = `${products[i].item}       ${products[i].valor}`
-    compra.innerText= meuProduto
-   list.appendChild(compra);
-}
+    let nomeProduto = document.createElement('p')
+    let valorProduto = document.createElement('p')
+    nomeProduto.innerText=element.item
+    valorProduto.innerText=element.valor
+   // let meuProduto = `${element.item}       ${element.valor}`
+  //  compra.innerText= meuProduto
+    list.appendChild(compra);
+    compra.appendChild(nomeProduto);
+    compra.appendChild(valorProduto);
+});
 
 let valorTotal = document.createElement('li')
 list.appendChild(valorTotal)
 valorTotal.innerText = `Total     ${soma}`
+
